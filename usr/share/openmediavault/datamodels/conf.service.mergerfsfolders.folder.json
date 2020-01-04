@@ -1,0 +1,46 @@
+{
+	"type": "config",
+	"title": "mergerfs folder",
+	"id": "conf.service.mergerfsfolders.folder",
+	"queryinfo": {
+		"xpath": "/config/services/mergerfsfolders/folder",
+		"iterable": true,
+		"idproperty": "uuid"
+	},
+	"properties": {
+		"uuid": {
+			"type": "string",
+			"format": "uuidv4"
+		},
+		"name": {
+			"type": "string",
+			"minLength": 1
+		},
+		"mntentref": {
+			"type": "string",
+			"format": "uuidv4"
+		},
+		"paths": {
+			"type": "string",
+			"minLength": 1
+		},
+		"create_policy": {
+			"type": "string",
+			"enum": [
+				"all", "epall", "epff",
+				"eplfs", "eplus", "epmfs",
+				"eprand", "erofs", "ff",
+				"lfs", "lus", "mfs",
+				"newest", "rand"
+			]
+		},
+		"min_free_space": {
+			"type": "string",
+			"format": "regex",
+			"pattern": "^[0-9]+[KMG]$"
+		},
+		"options": {
+			"type": "string"
+		}
+	}
+}

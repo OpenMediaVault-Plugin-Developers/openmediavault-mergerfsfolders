@@ -1,0 +1,15 @@
+Source: openmediavault-mergerfsfolders
+Section: net
+Priority: optional
+Maintainer: OpenMediaVault Plugin Developers <plugins@omv-extras.org>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.6
+XB-Plugin-Section: filesystems
+
+Package: openmediavault-mergerfsfolders
+Architecture: all
+Depends: omvextras-unionbackend,
+         openmediavault (>= 5.2),
+         ${misc:Depends}
+Description: mergerfs folders plugin for openmediavault.
+ Makes it possible to pool folders under a single mountpoint with mergerfs.
