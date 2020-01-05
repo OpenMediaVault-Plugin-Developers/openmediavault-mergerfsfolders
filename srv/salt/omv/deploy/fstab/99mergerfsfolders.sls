@@ -1,6 +1,6 @@
 {% set config = salt['omv_conf.get']('conf.service.mergerfsfolders') %}
 
-{% for pool in config.folders.folder %}
+{% for pool in config.folder %}
 {% set poolmount = salt['omv_conf.get_by_filter'](
   'conf.system.filesystem.mountpoint',
   {'operator':'stringEquals', 'arg0':'uuid', 'arg1':pool.mntentref}) %}
@@ -13,9 +13,11 @@
 
 {% set branches = [] %}
 {% set branchDirs = pool.paths.split('\n') %}
-{% for dir in branchDirs | length > 2 %}
+{% for dir in branchDirs %}
+{% if dir | length > 2 %}
 {% set _ = branches.append(dir) %}
 {% set _ = options.append('x-systemd.requires=' + dir) %}
+{% endif %}
 {% endfor %}
 
 create_mergerfsfolder_mountpoint_{{ pool.mntentref }}:
