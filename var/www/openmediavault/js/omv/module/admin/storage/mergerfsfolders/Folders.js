@@ -42,7 +42,6 @@ Ext.define('OMV.module.admin.storage.mergerfsfolders.Folders', {
     }, {
         xtype: 'textcolumn',
         header: _('Name'),
-        flex: 1,
         sortable: true,
         dataIndex: 'name'
     }, {
@@ -51,7 +50,11 @@ Ext.define('OMV.module.admin.storage.mergerfsfolders.Folders', {
         flex: 1,
         sortable: true,
         dataIndex: 'paths',
-        renderer: 'paths'
+        renderer: function(value) {
+            var newval = value.replace(/\n/g, "<br />");
+            var template = Ext.create('Ext.XTemplate', '<tpl for=".">{.}<br/></tpl>');
+            return template.apply(newval);
+        }
     }],
 
     store: Ext.create('OMV.data.Store', {

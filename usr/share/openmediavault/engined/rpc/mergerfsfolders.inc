@@ -70,8 +70,8 @@ class OMVRpcServiceMergerfsFolders extends \OMV\Rpc\ServiceAbstract
         // remove bad lines in paths
         $paths = explode(PHP_EOL, $params['paths']);
         foreach ($paths as $pathKey => &$path) {
-            if (strlen($path) < 2) {
-                unset($pathKey);
+            if (strlen($path) < 3) {
+                unset($paths[$pathKey]);
             }
         }
         $params['paths'] = implode(PHP_EOL, $paths);
@@ -97,7 +97,7 @@ class OMVRpcServiceMergerfsFolders extends \OMV\Rpc\ServiceAbstract
                 'opts' => '',
                 'freq' => 0,
                 'passno' => 0,
-            ]);
+            ], $context);
             // update uuid in config
             $object->set('mntentref', $result['uuid']);
             $db->set($object);
