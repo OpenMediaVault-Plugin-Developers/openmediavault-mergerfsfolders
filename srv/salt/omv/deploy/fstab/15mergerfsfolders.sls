@@ -17,7 +17,9 @@
 {% for dir in branchDirs %}
 {% if dir | length > 2 %}
 {% set _ = branches.append(dir) %}
+{% if '*' not in dir %}
 {% set _ = options.append('x-systemd.requires=' + dir) %}
+{% endif %}
 {% endif %}
 {% endfor %}
 
