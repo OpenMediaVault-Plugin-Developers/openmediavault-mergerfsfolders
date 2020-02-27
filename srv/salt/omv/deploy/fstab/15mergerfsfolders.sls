@@ -18,7 +18,10 @@
 {% if dir | length > 2 %}
 {% set _ = branches.append(dir) %}
 {% if '*' not in dir %}
-{% set _ = options.append('x-systemd.requires=' + dir) %}
+{% set parent = salt['cmd.shell']('findmnt --noheadings --output TARGET --target ' + dir) %}
+{% if parent | length > 1 %}
+{% set _ = options.append('x-systemd.requires=' + parent) %}
+{% endif %}
 {% endif %}
 {% endif %}
 {% endfor %}

@@ -1,3 +1,9 @@
+openmediavault-mergerfsfolders (5.0.2) stable; urgency=low
+
+  * Fix systemd-requires for sub-directory branches
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 27 Feb 2020 07:19:57 -0600
+
 openmediavault-mergerfsfolders (5.0.1) stable; urgency=low
 
   * Skip x-systemd.requires in fstab for paths with wildcard
