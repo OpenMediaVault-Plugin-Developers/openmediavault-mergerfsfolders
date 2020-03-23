@@ -5,7 +5,10 @@
   'conf.system.filesystem.mountpoint',
   {'operator':'stringEquals', 'arg0':'uuid', 'arg1':pool.mntentref}) %}
 {% set mntDir = poolmount[0].dir %}
-
+{% set mount = True %}
+{% if salt['mount.is_mounted'](mntDir) %}
+  {% set mount = False %}
+{% endif %}
 {% set options = [] %}
 {% set options = pool.options.split(',') %}
 {% set _ = options.append('category.create=' + pool.create_policy) %}
@@ -41,5 +44,5 @@ mount_filesystem_mountpoint_{{ pool.mntentref }}:
     - opts: {{ options }}
     - mkmnt: True
     - persist: False
-    - mount: True
+    - mount: {{ mount }}
 {% endfor %}
