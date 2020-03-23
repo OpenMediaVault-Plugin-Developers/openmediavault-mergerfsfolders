@@ -1,3 +1,9 @@
+openmediavault-mergerfsfolders (5.0.3) stable; urgency=low
+
+  * Mount only when fuse point is not mounted
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 23 Mar 2020 06:46:29 -0500
+
 openmediavault-mergerfsfolders (5.0.2) stable; urgency=low
 
   * Fix systemd-requires for sub-directory branches
