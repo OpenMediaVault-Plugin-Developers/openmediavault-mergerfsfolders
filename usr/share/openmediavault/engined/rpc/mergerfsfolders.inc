@@ -101,10 +101,10 @@ class OMVRpcServiceMergerfsFolders extends \OMV\Rpc\ServiceAbstract
             // update uuid in config
             $object->set('mntentref', $result['uuid']);
             $db->set($object);
-            // mark fstab dirty
-            $moduleMngr = \OMV\Engine\Module\Manager::getInstance();
-            $moduleMngr->setModuleDirty("fstab");
         }
+        // mark fstab dirty
+        $moduleMngr = \OMV\Engine\Module\Manager::getInstance();
+        $moduleMngr->setModuleDirty("fstab");
         // Return the configuration object.
         return $object->getAssoc();
     }

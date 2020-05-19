@@ -1,3 +1,9 @@
+openmediavault-mergerfsfolders (5.0.4) UNRELEASED; urgency=medium
+
+  * Apply fstab changes when editing pool
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 19 May 2020 11:51:00 -0500
+
 openmediavault-mergerfsfolders (5.0.3) stable; urgency=low
 
   * Mount only when fuse point is not mounted
