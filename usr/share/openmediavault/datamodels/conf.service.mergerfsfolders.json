@@ -45,6 +45,9 @@
 					},
 					"options": {
 						"type": "string"
+					},
+					"xsystemd": {
+						"type": "boolean"
 					}
 				}
 			}

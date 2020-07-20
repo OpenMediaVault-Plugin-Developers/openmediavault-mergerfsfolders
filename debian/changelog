@@ -1,8 +1,9 @@
-openmediavault-mergerfsfolders (5.0.4) UNRELEASED; urgency=medium
+openmediavault-mergerfsfolders (5.1) stable; urgency=low
 
   * Apply fstab changes when editing pool
+  * Add option to disable x-systemd.requires option
 
- -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Tue, 19 May 2020 11:51:00 -0500
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 20 Jul 2020 08:00:49 -0500
 
 openmediavault-mergerfsfolders (5.0.3) stable; urgency=low
 

@@ -115,6 +115,12 @@ Ext.define('OMV.module.admin.storage.mergerfsfolders.Folder', {
                 name: 'options',
                 fieldLabel: _('Options'),
                 value: 'defaults,allow_other,cache.files=off,use_ino'
+            },{
+                xtype: "checkbox",
+                name: "xsystemd",
+                fieldLabel: _("Disable x-systemd"),
+                boxLabel: _("Disable adding x-systemd.requires option for non-wildcard paths."),
+                checked: false
             }]
         }];
     }
