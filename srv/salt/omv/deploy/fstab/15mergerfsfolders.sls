@@ -21,7 +21,7 @@
 {% if dir | length > 2 %}
 {% set _ = branches.append(dir) %}
 {% if '*' not in dir %}
-{% set parent = salt['cmd.shell']('findmnt --noheadings --output TARGET --target ' + dir) %}
+{% set parent = salt['cmd.shell']('findmnt --first-only --noheadings --output TARGET --target ' + dir) %}
 {% if not pool.xsystemd %}
 {% if parent | length > 1 %}
 {% set _ = options.append('x-systemd.requires=' + parent) %}
