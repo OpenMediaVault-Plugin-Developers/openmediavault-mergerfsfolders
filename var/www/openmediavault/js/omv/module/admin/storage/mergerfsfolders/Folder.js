@@ -19,6 +19,7 @@
 // require("js/omv/workspace/window/Form.js")
 // require("js/omv/workspace/window/plugin/ConfigObject.js")
 // require("js/omv/form/field/plugin/FieldInfo.js")
+// require("js/omvextras/window/RootFolderBrowser.js")
 // require("js/omv/module/admin/storage/mergerfsfolders/MergerfsCreatePolicyStore.js")
 
 Ext.define('OMV.module.admin.storage.mergerfsfolders.Folder', {
@@ -26,7 +27,8 @@ Ext.define('OMV.module.admin.storage.mergerfsfolders.Folder', {
     requires: [
         'OMV.form.field.plugin.FieldInfo',
         'OMV.workspace.window.plugin.ConfigObject',
-        'OMV.module.admin.storage.mergerfsfolders.MergerfsCreatePolicyStore'
+        'OMV.module.admin.storage.mergerfsfolders.MergerfsCreatePolicyStore',
+        'OmvExtras.window.RootFolderBrowser'
     ],
 
     plugins: [{
