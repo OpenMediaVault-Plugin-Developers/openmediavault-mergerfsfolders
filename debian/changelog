@@ -1,3 +1,9 @@
+openmediavault-mergerfsfolders (5.1.2) stable; urgency=low
+
+  * Fix dependency
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Mon, 29 Mar 2021 17:20:13 -0500
+
 openmediavault-mergerfsfolders (5.1.1) stable; urgency=low
 
   * Fix root folder dependency
