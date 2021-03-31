@@ -10,10 +10,12 @@
   {% set mount = False %}
 {% endif %}
 {% set options = [] %}
-{% set options = pool.options.split(',') %}
 {% set _ = options.append('category.create=' + pool.create_policy) %}
 {% set _ = options.append('minfreespace=' + pool.min_free_space) %}
 {% set _ = options.append('fsname=' + pool.name + ':' + pool.uuid) %}
+{% for option in pool.options.split(',') %}
+{% set _ = options.append(option) %}
+{% endfor %}
 
 {% set branches = [] %}
 {% set branchDirs = pool.paths.split('\n') %}
