@@ -1,3 +1,9 @@
+openmediavault-mergerfsfolders (5.1.4) stable; urgency=low
+
+  * Check if the 'xsystemd' property exists. (PR #8)
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sun, 21 Nov 2021 10:43:57 -0600
+
 openmediavault-mergerfsfolders (5.1.3) stable; urgency=low
 
   * Add new mergerfs policies
